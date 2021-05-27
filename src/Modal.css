@@ -1,0 +1,129 @@
+.modal__overlay {
+  height: 102vh;
+  width: 100vw;
+  background-color: rgba(35, 35, 35, 0.8);
+  top: 0;
+  position: absolute;
+  animation-name: appear_overlay;
+  animation-duration: 0.2s;
+  z-index: 10;
+}
+.modal {
+  height: 90vh;
+  width: 80vw;
+  background-color: rgba(20, 20, 20, 0.95);
+  margin-left: 20vw;
+  top: 0;
+  position: absolute;
+  transform: translate(-12.5%, 10%);
+  border-radius: 0.5rem;
+  animation-name: appear_modal;
+  animation-duration: 1s;
+  z-index: 10;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.modal::-webkit-scrollbar {
+  display: none;
+}
+.modal > * {
+  position: relative;
+}
+.btn__close {
+  float: right;
+  margin: 1rem 1rem 0 0;
+  border-radius: 50%;
+  border: none;
+  padding: 0.4rem 0.7rem;
+  font-size: 18px;
+  font-weight: 200;
+  color: white;
+  background-color: rgba(20, 20, 20, 0.95);
+  cursor: pointer;
+  z-index: 100;
+}
+.modal__contents {
+  height: 625px;
+  object-fit: contain;
+}
+.modal__inner {
+  margin-left: 2rem;
+  padding-top: 340px;
+  height: 190px;
+}
+.modal__title {
+  font-size: 3rem;
+  /* font-weight: 600; */
+  font-family: "Bebas Neue";
+  padding-bottom: 0.3rem;
+  color: white;
+}
+.modal__description {
+  font-family: "Varela Round";
+  width: 45rem;
+  line-height: 1.3;
+  padding-top: 1rem;
+  font-size: 1rem;
+  max-width: 70vw;
+  height: 80px;
+  font-weight: 500;
+  color: rgb(247, 245, 245);
+}
+.modal__fade {
+  height: 7.4rem;
+  background-image: linear-gradient(
+    180deg,
+    transparent,
+    rgba(37, 37, 37, 0.61),
+    #111
+  );
+  float: bottom;
+}
+.modal__buttons > * {
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 0.2rem;
+}
+@keyframes appear_overlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+@keyframes appear_modal {
+  from {
+    height: 0;
+  }
+  to {
+    height: 90vh;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .modal {
+    height: 70vh;
+    background-repeat: no-repeat;
+    overflow-y: hidden;
+    animation-name: appear_modal;
+    animation-duration: 0.9s;
+  }
+  .modal__inner {
+    padding-top: 200px;
+  }
+  .modal__contents {
+    background-position: center center;
+  }
+  .modal__fade {
+    bottom: 0;
+    height: 20.4rem;
+  }
+  @keyframes appear_modal {
+    from {
+      height: 0;
+    }
+    to {
+      height: 70vh;
+    }
+  }
+}
